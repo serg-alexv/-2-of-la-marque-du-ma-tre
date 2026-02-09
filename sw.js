@@ -1,9 +1,10 @@
-const CACHE_NAME = 'kleymo-cache-v4';
+const CACHE_NAME = 'kleymo-cache-v5';
 const urlsToCache = [
-  './',
-  './index.html',
-  './index.tsx',
-  './manifest.json'
+  '/',
+  '/index.html',
+  '/src/main.tsx',
+  '/manifest.json',
+  '/index.css'
 ];
 
 self.addEventListener('install', event => {
@@ -44,10 +45,10 @@ self.addEventListener('fetch', event => {
 });
 
 // Focus window on notification click
-self.addEventListener('notificationclick', function(event) {
+self.addEventListener('notificationclick', function (event) {
   event.notification.close();
   event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(clientList) {
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (clientList) {
       if (clientList.length > 0) {
         let client = clientList[0];
         for (let i = 0; i < clientList.length; i++) {
