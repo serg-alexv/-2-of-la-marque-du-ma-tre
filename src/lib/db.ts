@@ -7,6 +7,7 @@ class ResilienceDB extends Dexie {
     weeks!: Table<WeeklyReview, string>;
     months!: Table<MonthlySeason, string>;
     settings!: Table<AppSettings, string>;
+    photos!: Table<{ id: string; data: string }, string>;
 
     constructor() {
         super('ResilienceDB_v3');
@@ -14,7 +15,8 @@ class ResilienceDB extends Dexie {
             days: 'date, scarcityScore, escalationLevel',
             weeks: 'id, startDate',
             months: 'id',
-            settings: 'key'
+            settings: 'key',
+            photos: 'id'
         });
     }
 }
@@ -44,4 +46,10 @@ export const MonthRepository = {
 export const SettingsRepository = {
     get: async (key: string) => (await db.settings.get(key))?.value,
     set: async (key: string, value: any) => db.settings.put({ key, value }),
+};
+
+export const PhotoRepository = {
+    save: async (id: string, data: string) => db.photos.put({ id, data }),
+    get: async (id: string) => (await db.photos.get(id))?.data || null,
+    delete: async (id: string) => db.photos.delete(id),
 };
