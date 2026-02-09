@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useGameStore } from '@/store/gameStore';
 import { useRouter } from '@/App';
 import { cn } from '@/lib/utils';
-import { LucideZap, LucideCloudRain, LucideShield, LucideSkull, LucideZap as LucideZapIcon } from 'lucide-react';
+import { LucideZap, LucideCloudRain, LucideShield, LucideSkull, LucideZap as LucideZapIcon, LucideHistory, LucideSettings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DayPlan } from '@/types';
 import { GlobalOverlays } from './GlobalOverlays';
@@ -78,23 +78,45 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     variant="ghost"
                     onClick={() => nav('dashboard')}
                     className={cn(
-                        "flex flex-col gap-1 h-auto py-2 text-xs transition-colors",
+                        "flex-1 flex flex-col gap-1 h-auto py-2 text-[10px] transition-colors",
                         currentView === 'dashboard' ? "text-white bg-zinc-900" : "text-zinc-600 hover:text-white"
                     )}
                 >
-                    <LucideZap className="w-5 h-5" />
-                    <span>TODAY</span>
+                    <LucideZapIcon className="w-5 h-5" />
+                    <span className="font-mono font-bold">STATUS</span>
                 </Button>
                 <Button
                     variant="ghost"
                     onClick={() => nav('planning')}
                     className={cn(
-                        "flex flex-col gap-1 h-auto py-2 text-xs transition-colors",
+                        "flex-1 flex flex-col gap-1 h-auto py-2 text-[10px] transition-colors",
                         currentView === 'planning' ? "text-white bg-zinc-900" : "text-zinc-600 hover:text-white"
                     )}
                 >
                     <LucideCloudRain className="w-5 h-5" />
-                    <span>REVIEW</span>
+                    <span className="font-mono font-bold">PLAN</span>
+                </Button>
+                <Button
+                    variant="ghost"
+                    onClick={() => nav('journal')}
+                    className={cn(
+                        "flex-1 flex flex-col gap-1 h-auto py-2 text-[10px] transition-colors",
+                        currentView === 'journal' ? "text-white bg-zinc-900" : "text-zinc-600 hover:text-white"
+                    )}
+                >
+                    <LucideHistory className="w-5 h-5" />
+                    <span className="font-mono font-bold">LOGS</span>
+                </Button>
+                <Button
+                    variant="ghost"
+                    onClick={() => nav('settings')}
+                    className={cn(
+                        "flex-1 flex flex-col gap-1 h-auto py-2 text-[10px] transition-colors",
+                        currentView === 'settings' ? "text-white bg-zinc-900" : "text-zinc-600 hover:text-white"
+                    )}
+                >
+                    <LucideSettings className="w-5 h-5" />
+                    <span className="font-mono font-bold">CONFIG</span>
                 </Button>
             </nav>
 

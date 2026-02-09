@@ -6,6 +6,8 @@ import { migrateLegacyData } from '@/lib/migration';
 // Placeholder Pages (Will be in modules)
 import { Dashboard } from './components/modules/dashboard/Dashboard';
 import { PlanningHub } from './components/modules/planning/PlanningHub';
+import { Journal } from './components/modules/journal/Journal';
+import { Settings } from './components/modules/settings/Settings';
 
 // Zustand Store for simple routing (can upgrade to React Router later)
 import { create } from 'zustand';
@@ -34,7 +36,8 @@ function App() {
         <AppShell>
             {currentView === 'dashboard' && <Dashboard />}
             {currentView === 'planning' && <PlanningHub />}
-            {/* Other Views... */}
+            {currentView === 'journal' && <Journal />}
+            {currentView === 'settings' && <Settings />}
         </AppShell>
     );
 }
