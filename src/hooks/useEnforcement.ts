@@ -81,12 +81,16 @@ export const useEnforcement = () => {
     }, [currentDay, isHoldingBreath, score]);
 
     // Initialize Services
+    const { interactionRequired } = useGameStore();
+
     useEffect(() => {
-        audioMonitor.startListening();
-        speechService.start();
+        if (!interactionRequired) {
+            audioMonitor.startListening();
+            speechService.start();
+        }
         return () => {
             audioMonitor.stopListening();
             speechService.stop();
         };
-    }, []);
+    }, [interactionRequired]);
 };

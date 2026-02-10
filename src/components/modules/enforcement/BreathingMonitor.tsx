@@ -168,7 +168,7 @@ const BreathingMonitor: React.FC = () => {
 
                         {/* Interactive Pacer */}
                         <div
-                            className={`w-64 h-64 rounded-full border-4 transition-all duration-[50ms] ease-linear flex items-center justify-center
+                            className={`w-64 h-64 rounded-full border-4 transition-all duration-75 ease-linear flex items-center justify-center
                                 ${pacerState === 'HOLD' ? 'border-blue-500 bg-blue-900/20 shadow-[0_0_50px_rgba(59,130,246,0.5)]' :
                                     (pacerState === 'INHALE' ? 'border-green-600 bg-green-900/10' : 'border-red-600 bg-red-900/10')}`}
                             style={{

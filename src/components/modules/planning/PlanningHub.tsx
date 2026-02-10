@@ -9,7 +9,7 @@ export const PlanningHub: React.FC = () => {
 
     return (
         <div className="space-y-6">
-            <h1 className="text-2xl font-creep text-center text-zinc-100 uppercase tracking-widest mb-6">Execution Protocol</h1>
+            <h1 className="text-2xl font-creep text-center text-zinc-100 uppercase tracking-widest mb-6">Протокол Исполнения</h1>
 
             {/* TABS (Simplified without Radix for now) */}
             <div className="flex border-b border-zinc-800">
@@ -17,13 +17,13 @@ export const PlanningHub: React.FC = () => {
                     onClick={() => setActiveTab('weekly')}
                     className={`flex-1 p-3 text-sm font-mono uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'weekly' ? 'border-red-600 text-red-500' : 'border-transparent text-zinc-600'}`}
                 >
-                    Weekly Cycle
+                    Недельный Цикл
                 </button>
                 <button
                     onClick={() => setActiveTab('monthly')}
                     className={`flex-1 p-3 text-sm font-mono uppercase tracking-widest border-b-2 transition-colors ${activeTab === 'monthly' ? 'border-red-600 text-red-500' : 'border-transparent text-zinc-600'}`}
                 >
-                    Clean Slate
+                    Чистый Лист
                 </button>
             </div>
 
@@ -32,21 +32,21 @@ export const PlanningHub: React.FC = () => {
                     <Card className="border-l-4 border-l-purple-900 bg-zinc-950/50">
                         <CardHeader className="pb-2">
                             <CardTitle className="text-xs uppercase text-purple-400 flex items-center gap-2">
-                                <LucideLayout className="w-4 h-4" /> Board Meeting
+                                <LucideLayout className="w-4 h-4" /> Совет Директоров
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-2 text-sm text-zinc-400">
                             <div className="p-2 border border-zinc-800 rounded flex justify-between">
-                                <span>CEO (Strategy)</span>
-                                <span className="text-zinc-600">Pending</span>
+                                <span>CEO (Стратегия)</span>
+                                <span className="text-zinc-600">Ожидание</span>
                             </div>
                             <div className="p-2 border border-zinc-800 rounded flex justify-between">
-                                <span>COACH (Tactics)</span>
-                                <span className="text-zinc-600">Pending</span>
+                                <span>COACH (Тактика)</span>
+                                <span className="text-zinc-600">Ожидание</span>
                             </div>
                             <div className="p-2 border border-zinc-800 rounded flex justify-between">
-                                <span>LOVER (Reward)</span>
-                                <span className="text-zinc-600">Pending</span>
+                                <span>LOVER (Награда)</span>
+                                <span className="text-zinc-600">Ожидание</span>
                             </div>
                         </CardContent>
                     </Card>
@@ -54,12 +54,12 @@ export const PlanningHub: React.FC = () => {
                     <Card className="border-l-4 border-l-red-900 bg-zinc-950/50">
                         <CardHeader className="pb-2">
                             <CardTitle className="text-xs uppercase text-red-500 flex items-center gap-2">
-                                <LucideFlag className="w-4 h-4" /> The 1 Rule
+                                <LucideFlag className="w-4 h-4" /> Главное Правило
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="font-mono text-zinc-100 text-center p-4 border border-dashed border-zinc-800">
-                                NO SOCIAL MEDIA BEFORE NOON
+                                НИКАКИХ СОЦСЕТЕЙ ДО ПОЛУДНЯ
                             </div>
                         </CardContent>
                     </Card>
@@ -68,7 +68,7 @@ export const PlanningHub: React.FC = () => {
 
             {activeTab === 'monthly' && (
                 <div className="text-center py-12 text-zinc-600 font-mono text-xs uppercase animate-in fade-in">
-                    Contribution Capsule Required to Unlock
+                    Требуется Капсула Вклада для разблокировки
                 </div>
             )}
         </div>

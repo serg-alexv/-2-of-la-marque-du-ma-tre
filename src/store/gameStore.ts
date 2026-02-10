@@ -10,6 +10,7 @@ interface GameState {
     xp: number;
     escalationLevel: 0 | 1 | 2 | 3 | 4;
     showOverlay: string | null;
+    interactionRequired: boolean;
 
     // Actions
     initialize: () => Promise<void>;
@@ -17,6 +18,7 @@ interface GameState {
     calculateEscalation: (day: DayPlan) => void;
     triggerOverlay: (type: 'pacer' | 'voice' | 'locked') => void;
     clearOverlay: () => void;
+    setInteractionRequired: (val: boolean) => void;
 }
 
 const INITIAL_DAY_TEMPLATE = (date: string): DayPlan => ({
@@ -27,11 +29,11 @@ const INITIAL_DAY_TEMPLATE = (date: string): DayPlan => ({
     middaySprint: { focusTime: 0, completed: false },
     eveningHarvest: { wins: [], lessons: [] },
     domains: {
-        body: { completed: false, value: 0, target: 1, label: 'Physical Train' },
-        meaning: { completed: false, value: 0, target: 1, label: 'Read/Med' },
-        creation: { completed: false, value: 0, target: 1, label: 'Deep Work' },
-        connection: { completed: false, value: 0, target: 1, label: 'Social' },
-        intimacy: { completed: false, value: 0, target: 1, label: 'Self/Partner' },
+        body: { completed: false, value: 0, target: 1, label: 'Физическая Тренировка' },
+        meaning: { completed: false, value: 0, target: 1, label: 'Чтение / Медитация' },
+        creation: { completed: false, value: 0, target: 1, label: 'Глубокая Работа' },
+        connection: { completed: false, value: 0, target: 1, label: 'Социум / Окружение' },
+        intimacy: { completed: false, value: 0, target: 1, label: 'Близость / Свой-Чужой' },
     },
     legacy: {
         plugTime: 0,
@@ -46,6 +48,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     xp: 0,
     escalationLevel: 0,
     showOverlay: null,
+    interactionRequired: true,
 
     initialize: async () => {
         const today = format(new Date(), 'yyyy-MM-dd');
@@ -99,4 +102,5 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     triggerOverlay: (type) => set({ showOverlay: type }),
     clearOverlay: () => set({ showOverlay: null }),
+    setInteractionRequired: (val) => set({ interactionRequired: val }),
 }));

@@ -5,8 +5,40 @@ import { cn } from '@/lib/utils';
 import { LucideSkull, LucideZap, LucideShieldAlert } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+import { speak } from '@/lib/services/tts';
+import { PHRASES } from '@/lib/constants';
+
 export const GlobalOverlays: React.FC = () => {
-    const { showOverlay, clearOverlay } = useGameStore();
+    const { showOverlay, clearOverlay, interactionRequired, setInteractionRequired } = useGameStore();
+
+    if (interactionRequired) {
+        return (
+            <div className="fixed inset-0 z-[300] flex items-center justify-center p-6 bg-black">
+                <div className="text-center space-y-10 max-w-sm">
+                    <div className="space-y-4">
+                        <LucideShieldAlert className="w-20 h-20 text-red-600 mx-auto animate-pulse" />
+                        <h1 className="text-3xl font-creep text-red-600 tracking-widest">ПРОТОКОЛ <br /> ЗАБЛОКИРОВАН</h1>
+                        <p className="text-zinc-500 font-mono text-[10px] uppercase leading-relaxed">
+                            ПРИЛОЖЕНИЕ ТРЕБУЕТ ПОДТВЕРЖДЕНИЯ ВАШЕЙ ЛИЧНОСТИ И ГОТОВНОСТИ К ПОВИНОВЕНИЮ.
+                            <br /><br />
+                            НАЖИМАЯ КНОПКУ НИЖЕ, ВЫ ДАЕТЕ СОГЛАСИЕ НА АУДИО-МОНИТОРИНГ И ПРИНЯТИЕ ВСЕХ ПРАВИЛ ХОЗЯИНА.
+                        </p>
+                    </div>
+                    <Button
+                        onClick={() => {
+                            setInteractionRequired(false);
+                            // Initial Greeting
+                            const text = PHRASES.greetings[Math.floor(Math.random() * PHRASES.greetings.length)];
+                            speak(text, true);
+                        }}
+                        className="bg-red-900 text-white hover:bg-red-700 font-bold font-mono text-xs tracking-widest uppercase px-12 py-6 h-auto border-2 border-red-600 shadow-[0_0_30px_rgba(220,38,38,0.3)]"
+                    >
+                        Я ПОДЧИНЯЮСЬ
+                    </Button>
+                </div>
+            </div>
+        );
+    }
 
     if (!showOverlay) return null;
 

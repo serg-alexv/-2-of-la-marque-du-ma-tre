@@ -42,7 +42,7 @@ export const Dashboard: React.FC = () => {
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <span className="text-4xl font-bold font-mono">{score}</span>
-                        <span className="text-[10px] uppercase text-zinc-500">SCARCITY SCORE</span>
+                        <span className="text-[10px] uppercase text-zinc-500">ОЧКИ ДЕФИЦИТА</span>
                     </div>
                 </div>
             </div>
@@ -58,6 +58,14 @@ export const Dashboard: React.FC = () => {
                         intimacy: LucideHeart,
                     }[key as LifeDomain];
 
+                    const LabelRU = {
+                        body: 'ТЕЛО',
+                        meaning: 'СМЫСЛ',
+                        creation: 'СОЗИДАНИЕ',
+                        connection: 'СВЯЗИ',
+                        intimacy: 'БЛИЗОСТЬ',
+                    }[key as LifeDomain];
+
                     return (
                         <button
                             key={key}
@@ -70,7 +78,7 @@ export const Dashboard: React.FC = () => {
                             )}
                         >
                             <Icon className={cn("w-6 h-6 mb-2", domain.completed ? "text-white" : "text-zinc-600")} />
-                            <div className="text-xs uppercase font-bold tracking-wider">{key}</div>
+                            <div className="text-xs uppercase font-bold tracking-wider">{LabelRU}</div>
                             <div className="text-[10px] text-zinc-500 mt-1">{domain.label}</div>
                         </button>
                     );
@@ -83,19 +91,19 @@ export const Dashboard: React.FC = () => {
             {/* DAILY PROTOCOL (Sprint/Ignition) */}
             <Card className="bg-zinc-950 border-zinc-800">
                 <CardHeader>
-                    <CardTitle className="text-sm font-mono text-zinc-400 uppercase">Daily Protocol</CardTitle>
+                    <CardTitle className="text-sm font-mono text-zinc-400 uppercase">Протокол Дня</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {/* Morning Ignition */}
                     <div className="flex items-center justify-between p-3 border border-zinc-900 rounded bg-black/50">
-                        <div className="text-xs font-bold text-zinc-300">MORNING IGNITION</div>
+                        <div className="text-xs font-bold text-zinc-300">ЗАЖИГАНИЕ</div>
                         <div className={cn("w-2 h-2 rounded-full", currentDay.morningIgnition.completedAt ? "bg-green-500" : "bg-red-900 animate-pulse")} />
                     </div>
 
                     {/* Midday Sprint */}
                     <div className="flex items-center justify-between p-3 border border-zinc-900 rounded bg-black/50">
-                        <div className="text-xs font-bold text-zinc-300">MIDDAY SPRINT (25m)</div>
-                        <div className="text-xs font-mono text-zinc-500">{currentDay.middaySprint.focusTime}m</div>
+                        <div className="text-xs font-bold text-zinc-300">СПРИНТ (25м)</div>
+                        <div className="text-xs font-mono text-zinc-500">{currentDay.middaySprint.focusTime}м</div>
                     </div>
                 </CardContent>
             </Card>

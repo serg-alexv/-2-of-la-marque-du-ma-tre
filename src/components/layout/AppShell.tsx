@@ -55,7 +55,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     <div>
                         <h1 className="text-sm font-bold tracking-widest uppercase">La Marque</h1>
                         <div className="text-[10px] text-zinc-500 font-mono">
-                            LEVEL {escalationLevel} • {currentDay?.date}
+                            УРОВЕНЬ {escalationLevel} • {currentDay?.date}
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     )}
                 >
                     <LucideZapIcon className="w-5 h-5" />
-                    <span className="font-mono font-bold">STATUS</span>
+                    <span className="font-mono font-bold">СТАТУС</span>
                 </Button>
                 <Button
                     variant="ghost"
@@ -94,7 +94,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     )}
                 >
                     <LucideCloudRain className="w-5 h-5" />
-                    <span className="font-mono font-bold">PLAN</span>
+                    <span className="font-mono font-bold">ПЛАН</span>
                 </Button>
                 <Button
                     variant="ghost"
@@ -105,7 +105,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     )}
                 >
                     <LucideHistory className="w-5 h-5" />
-                    <span className="font-mono font-bold">LOGS</span>
+                    <span className="font-mono font-bold">ЛОГИ</span>
                 </Button>
                 <Button
                     variant="ghost"
@@ -116,7 +116,7 @@ export const AppShell: React.FC<{ children: React.ReactNode }> = ({ children }) 
                     )}
                 >
                     <LucideSettings className="w-5 h-5" />
-                    <span className="font-mono font-bold">CONFIG</span>
+                    <span className="font-mono font-bold">КОНФИГ</span>
                 </Button>
             </nav>
 
