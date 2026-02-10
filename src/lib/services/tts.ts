@@ -1,6 +1,5 @@
 
-
-export const speak = (text: string, force = false) => {
+export const speak = (text: string, force = false, rate?: number, pitch?: number) => {
     console.log(`[SPEAK START] Text: "${text}"`);
 
     if (!window.speechSynthesis) {
@@ -43,8 +42,8 @@ export const speak = (text: string, force = false) => {
                 utterance.voice = voice;
             }
 
-            utterance.pitch = 0.8;
-            utterance.rate = 1.1;
+            utterance.pitch = pitch || 0.8;
+            utterance.rate = rate || 1.1;
             utterance.volume = 1.0;
 
             utterance.onstart = () => console.log("[SPEAK EVENT] Started");

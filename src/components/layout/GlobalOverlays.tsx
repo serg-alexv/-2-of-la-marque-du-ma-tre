@@ -27,9 +27,16 @@ export const GlobalOverlays: React.FC = () => {
                     <Button
                         onClick={() => {
                             setInteractionRequired(false);
-                            // Initial Greeting
-                            const text = PHRASES.greetings[Math.floor(Math.random() * PHRASES.greetings.length)];
-                            speak(text, true);
+
+                            // Check if greeting was already played this session
+                            const greetingPlayed = sessionStorage.getItem('_greeting_played');
+
+                            if (!greetingPlayed) {
+                                // Initial Greeting with custom parameters
+                                const text = PHRASES.greetings[Math.floor(Math.random() * PHRASES.greetings.length)];
+                                speak(text, true, 1.3, 0.9); // rate 1.3, pitch 0.9
+                                sessionStorage.setItem('_greeting_played', 'true');
+                            }
                         }}
                         className="bg-red-900 text-white hover:bg-red-700 font-bold font-mono text-xs tracking-widest uppercase px-12 py-6 h-auto border-2 border-red-600 shadow-[0_0_30px_rgba(220,38,38,0.3)]"
                     >

@@ -73,12 +73,35 @@ export const useGameStore = create<GameState>((set, get) => ({
 
         const newDay = { ...currentDay, ...updates };
 
-        // Recalculate Score: 100 base, -20 per incomplete domain
+        // Granular Scoring System
+        let newScore = 0;
+
+        // Base domain completion: 20 points per domain (max 100)
         const domainValues = Object.values(newDay.domains);
         const completedCount = domainValues.filter(d => d.completed).length;
-        const newScore = Math.max(0, 100 - ((domainValues.length - completedCount) * 20));
+        newScore += completedCount * 20;
 
+        // Ritual bonuses
+        if (newDay.morningIgnition.completedAt) newScore += 20; // Morning ritual
+        if (newDay.legacy.morningPhotoId) newScore += 25; // Photo upload
+        if (newDay.legacy.plugTime >= 36000) newScore += 20; // Plug 10+ hours (36000 seconds)
+        if (newDay.legacy.audioTime >= 1800) newScore += 15; // Audio 30+ min (1800 seconds)
+        if (newDay.legacy.humiliationCount >= 50) newScore += 10; // Humiliations 50+
+        if (newDay.eveningHarvest.completedAt) newScore += 10; // Evening ritual
+
+        // Cap at 100
+        newScore = Math.min(100, newScore);
         newDay.scarcityScore = newScore;
+
+        // Check for penalty (score < 70)
+        const previousScore = currentDay.scarcityScore;
+        if (newScore < 70 && previousScore >= 70) {
+            // Trigger TTS penalty (imported dynamically to avoid circular deps)
+            const { speak } = await import('@/lib/services/tts');
+            const { PHRASES } = await import('@/lib/constants');
+            const penaltyText = `Ты провалилась, мразь. Score ${newScore}. Штраф: удвоить завтра.`;
+            speak(penaltyText, true);
+        }
 
         // Check Escalation
         calculateEscalation(newDay);
