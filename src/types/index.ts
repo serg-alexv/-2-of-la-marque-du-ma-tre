@@ -66,3 +66,33 @@ export interface AppSettings {
     key: string;
     value: any;
 }
+
+// Persona and Settings Types
+export type PersonaId = 'supportive' | 'neutral' | 'strict';
+
+export interface PersonaProfile {
+    id: PersonaId;
+    nameKey: string; // i18n key
+    sampleKey: string; // i18n key
+    style: {
+        warmth: number; // 0-100
+        directness: number; // 0-100
+        formality: number; // 0-100
+    };
+    tts: {
+        lang: string;
+        rate: number;
+        pitch: number;
+    };
+}
+
+export interface UserSettings {
+    version: number;
+    personaId: PersonaId;
+    speechEnabled: boolean;
+    language: string;
+    customTTS?: {
+        rate: number;
+        pitch: number;
+    };
+}

@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "settings": "[TODO translate] Settings"
+    },
+    "settings": {
+        "title": "[TODO translate] Settings",
+        "personaTitle": "[TODO translate] Accountability Style",
+        "speechEnabled": "[TODO translate] Voice Feedback Enabled",
+        "preview": "[TODO translate] Preview Voice",
+        "rate": "[TODO translate] Speech Rate",
+        "pitch": "[TODO translate] Speech Pitch",
+        "language": "[TODO translate] Language"
+    },
+    "persona": {
+        "supportive": "[TODO translate] Supportive",
+        "neutral": "[TODO translate] Neutral",
+        "strict": "[TODO translate] Strict",
+        "sample_supportive": "[TODO translate] You're making progress. Keep up the good work.",
+        "sample_neutral": "[TODO translate] Task completed. Continue with the next item.",
+        "sample_strict": "[TODO translate] Acceptable performance. Maintain this standard."
+    }
+}

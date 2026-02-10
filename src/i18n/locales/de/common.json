@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "settings": "Einstellungen"
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "personaTitle": "Verantwortungsstil",
+        "speechEnabled": "Sprachrückmeldung Aktiviert",
+        "preview": "Stimme Vorhören",
+        "rate": "Sprechgeschwindigkeit",
+        "pitch": "Tonhöhe",
+        "language": "Sprache"
+    },
+    "persona": {
+        "supportive": "Unterstützend",
+        "neutral": "Neutral",
+        "strict": "Streng",
+        "sample_supportive": "Sie machen Fortschritte. Machen Sie weiter so.",
+        "sample_neutral": "Aufgabe abgeschlossen. Fahren Sie mit der nächsten fort.",
+        "sample_strict": "Akzeptable Leistung. Halten Sie diesen Standard."
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "settings": "Settings"
+    },
+    "settings": {
+        "title": "Settings",
+        "personaTitle": "Accountability Style",
+        "speechEnabled": "Voice Feedback Enabled",
+        "preview": "Preview Voice",
+        "rate": "Speech Rate",
+        "pitch": "Speech Pitch",
+        "language": "Language"
+    },
+    "persona": {
+        "supportive": "Supportive",
+        "neutral": "Neutral",
+        "strict": "Strict",
+        "sample_supportive": "You're making progress. Keep up the good work.",
+        "sample_neutral": "Task completed. Continue with the next item.",
+        "sample_strict": "Acceptable performance. Maintain this standard."
+    }
+}

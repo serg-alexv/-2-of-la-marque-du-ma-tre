@@ -1,0 +1,22 @@
+{
+    "nav": {
+        "settings": "Paramètres"
+    },
+    "settings": {
+        "title": "Paramètres",
+        "personaTitle": "Style de Responsabilité",
+        "speechEnabled": "Retour Vocal Activé",
+        "preview": "Aperçu de la Voix",
+        "rate": "Vitesse de Parole",
+        "pitch": "Hauteur de Voix",
+        "language": "Langue"
+    },
+    "persona": {
+        "supportive": "Encourageant",
+        "neutral": "Neutre",
+        "strict": "Strict",
+        "sample_supportive": "Vous progressez bien. Continuez ainsi.",
+        "sample_neutral": "Tâche terminée. Passez à la suivante.",
+        "sample_strict": "Performance acceptable. Maintenez ce niveau."
+    }
+}
