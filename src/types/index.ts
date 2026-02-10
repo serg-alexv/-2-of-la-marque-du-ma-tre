@@ -90,6 +90,7 @@ export interface UserSettings {
     version: number;
     personaId: PersonaId;
     speechEnabled: boolean;
+    intenseModeEnabled: boolean;
     language: string;
     customTTS?: {
         rate: number;

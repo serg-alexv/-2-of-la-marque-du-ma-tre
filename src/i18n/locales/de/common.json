@@ -1,6 +1,7 @@
 {
     "nav": {
-        "settings": "Einstellungen"
+        "settings": "Einstellungen",
+        "back": "Zurück"
     },
     "settings": {
         "title": "Einstellungen",
@@ -9,7 +10,12 @@
         "preview": "Stimme Vorhören",
         "rate": "Sprechgeschwindigkeit",
         "pitch": "Tonhöhe",
-        "language": "Sprache"
+        "language": "Sprache",
+        "intenseModeTitle": "Intensivmodus",
+        "intenseModeHint": "Erhöht Dringlichkeit und Sichtbarkeit von Warnungen. Erfordert private Version.",
+        "phrasePackTitle": "Benutzerdefinierte Phrasen",
+        "phrasePackImport": "Phrasenpaket Importieren",
+        "phrasePackStatus": "Keine benutzerdefinierten Phrasen geladen"
     },
     "persona": {
         "supportive": "Unterstützend",
@@ -18,5 +24,9 @@
         "sample_supportive": "Sie machen Fortschritte. Machen Sie weiter so.",
         "sample_neutral": "Aufgabe abgeschlossen. Fahren Sie mit der nächsten fort.",
         "sample_strict": "Akzeptable Leistung. Halten Sie diesen Standard."
+    },
+    "overlay": {
+        "fail_state_title": "FEHLERZUSTAND",
+        "fail_state_body": "Punktzahl {score}. Korrigieren Sie den Plan jetzt."
     }
 }

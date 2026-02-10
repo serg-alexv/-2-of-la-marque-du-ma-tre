@@ -1,4 +1,5 @@
 import { UserSettings, PersonaId } from '@/types';
+import { isIntenseModeAvailable } from '@/config/flags';
 
 const STORAGE_KEY = 'user_settings';
 const CURRENT_VERSION = 1;
@@ -7,6 +8,7 @@ const DEFAULT_SETTINGS: UserSettings = {
     version: CURRENT_VERSION,
     personaId: 'neutral',
     speechEnabled: true,
+    intenseModeEnabled: false,
     language: 'en',
 };
 
@@ -21,6 +23,11 @@ export function loadSettings(): UserSettings {
         if (parsed.version !== CURRENT_VERSION) {
             console.warn('[Storage] Version mismatch, using defaults');
             return DEFAULT_SETTINGS;
+        }
+
+        // Force intense mode off if not available via feature flag
+        if (!isIntenseModeAvailable()) {
+            parsed.intenseModeEnabled = false;
         }
 
         return parsed;

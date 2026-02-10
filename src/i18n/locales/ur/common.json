@@ -1,6 +1,7 @@
 {
     "nav": {
-        "settings": "[TODO translate] Settings"
+        "settings": "[TODO translate] Settings",
+        "back": "[TODO translate] Back"
     },
     "settings": {
         "title": "[TODO translate] Settings",
@@ -9,7 +10,12 @@
         "preview": "[TODO translate] Preview Voice",
         "rate": "[TODO translate] Speech Rate",
         "pitch": "[TODO translate] Speech Pitch",
-        "language": "[TODO translate] Language"
+        "language": "[TODO translate] Language",
+        "intenseModeTitle": "[TODO translate] Intense Mode",
+        "intenseModeHint": "[TODO translate] Increases urgency and overlay prominence. Requires private build.",
+        "phrasePackTitle": "[TODO translate] Custom Phrases",
+        "phrasePackImport": "[TODO translate] Import Phrase Pack",
+        "phrasePackStatus": "[TODO translate] No custom phrases loaded"
     },
     "persona": {
         "supportive": "[TODO translate] Supportive",
@@ -18,5 +24,9 @@
         "sample_supportive": "[TODO translate] You're making progress. Keep up the good work.",
         "sample_neutral": "[TODO translate] Task completed. Continue with the next item.",
         "sample_strict": "[TODO translate] Acceptable performance. Maintain this standard."
+    },
+    "overlay": {
+        "fail_state_title": "[TODO translate] FAIL STATE",
+        "fail_state_body": "[TODO translate] Score {score}. Fix the plan now."
     }
 }

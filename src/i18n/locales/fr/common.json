@@ -1,6 +1,7 @@
 {
     "nav": {
-        "settings": "Paramètres"
+        "settings": "Paramètres",
+        "back": "Retour"
     },
     "settings": {
         "title": "Paramètres",
@@ -9,7 +10,12 @@
         "preview": "Aperçu de la Voix",
         "rate": "Vitesse de Parole",
         "pitch": "Hauteur de Voix",
-        "language": "Langue"
+        "language": "Langue",
+        "intenseModeTitle": "Mode Intense",
+        "intenseModeHint": "Augmente l'urgence et la visibilité des alertes. Nécessite une version privée.",
+        "phrasePackTitle": "Phrases Personnalisées",
+        "phrasePackImport": "Importer Pack de Phrases",
+        "phrasePackStatus": "Aucune phrase personnalisée chargée"
     },
     "persona": {
         "supportive": "Encourageant",
@@ -18,5 +24,9 @@
         "sample_supportive": "Vous progressez bien. Continuez ainsi.",
         "sample_neutral": "Tâche terminée. Passez à la suivante.",
         "sample_strict": "Performance acceptable. Maintenez ce niveau."
+    },
+    "overlay": {
+        "fail_state_title": "ÉTAT D'ÉCHEC",
+        "fail_state_body": "Score {score}. Corrigez le plan maintenant."
     }
 }

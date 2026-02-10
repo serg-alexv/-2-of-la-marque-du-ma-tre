@@ -1,6 +1,7 @@
 {
     "nav": {
-        "settings": "Settings"
+        "settings": "Settings",
+        "back": "Back"
     },
     "settings": {
         "title": "Settings",
@@ -9,7 +10,12 @@
         "preview": "Preview Voice",
         "rate": "Speech Rate",
         "pitch": "Speech Pitch",
-        "language": "Language"
+        "language": "Language",
+        "intenseModeTitle": "Intense Mode",
+        "intenseModeHint": "Increases urgency and overlay prominence. Requires private build.",
+        "phrasePackTitle": "Custom Phrases",
+        "phrasePackImport": "Import Phrase Pack",
+        "phrasePackStatus": "No custom phrases loaded"
     },
     "persona": {
         "supportive": "Supportive",
@@ -18,5 +24,9 @@
         "sample_supportive": "You're making progress. Keep up the good work.",
         "sample_neutral": "Task completed. Continue with the next item.",
         "sample_strict": "Acceptable performance. Maintain this standard."
+    },
+    "overlay": {
+        "fail_state_title": "FAIL STATE",
+        "fail_state_body": "Score {score}. Fix the plan now."
     }
 }
